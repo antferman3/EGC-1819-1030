@@ -12,11 +12,9 @@ python:
 - '3.6'
 install:
 - pip install -r requirements.txt
-- pip install django-chartjs
+- pip install codacy-coverage
 script:
 - cd decide
-- cp travis_local_settings.py local_settings.py
-- python3 manage.py makemigrations
-- python3 manage.py migrate
-- python manage.py collectstatic
 - coverage run --branch --source=. ./manage.py test mixnet --keepdb
+- coverage xml
+- python-codacy-coverage -r coverage.xml

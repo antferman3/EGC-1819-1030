@@ -167,7 +167,7 @@ class MixnetCase(APITestCase):
             "voting": 1,
             "auths": [
                 { "name": "auth1", "url": "http://localhost:8000" },
-                { "name": "auth2", "url": "http://127.0.0.1:8000" },
+               # { "name": "auth2", "url": "http://127.0.0.1:8000" },
             ]
         }
         response = self.client.post('/mixnet/', data, format='json')
